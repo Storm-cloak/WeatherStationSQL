@@ -10,6 +10,28 @@ scope of this project we have only one city – Baku , and only one personal sta
 * Allow user (sysadmin) to see the configuration of the station
 ## Entity Relationship Diagram - ERD
 ![](assets/images/ERDfull.png)
+
+### Relationships
+1. In one ***City*** a lot of ***stations*** can be located. **(Many)**
+ One specific ***Station*** is located in one city. **(1)**
+2. One ***Station*** has one unique ***configuration***. **(1)**
+ One unique ***configuration*** can be installed in many different ***stations***. **(Many)**
+3. Since One ***unique configuration*** consist of ***many devices***, and ***one device*** can be included in a ***lot of
+configurations***. **(Many:Many)**, ***linked table (configuration_devices) have been created in order to handle
+M:M relationship.***
+4. One ***attribute*** can be measured by several ***devices*** **(1:Many)**, and one ***attribute*** may have several ***units.***
+**(1:Many)**
+5. Since ***one station*** can hold a ***lot of attributes***, and ***one attribute*** can be stored in a ***lot of stations***
+**(Many:Many)**, ***linked table (station_settings) have been created.***
+6. For ***one city*** a ***lot of “Daily measurements” will be recorded***, ***single “Daily measurement”*** will come from
+one and only one city. **(1:Many)**
+###### Note: Since this table holds one record per city per date, these columns (city_id and date_day ) form the
+###### composite primary key for this table.
+7. For ***one city*** a ***lot of “Hourly measurements”*** will be recorded, ***single “Hourly measurement”*** will come
+from one and only one city. (1:Many)
+8. each qualitative table ***(temp, wind, humidity, rain_feeling)*** can be referenced to several hours.
+
+
 ## Quantitative Entities:
 
 ###### Hourly_weather_log holds all attributes that change during the day. We consider these
