@@ -35,7 +35,7 @@ from one and only one city. (1:Many)
 
 ###### Hourly_weather_log holds all attributes that change during the day. We consider these
 ###### attributes as one record for a specific timeframe.
-* Id -> identifier of the Entity.
+* Id **->**  identifier of the Entity.
 * city_id **->** relevant city identifier.
 * start_frame **->**  signifies when certain timeframe started.
 * end_frame **->**  signifies when certain timeframe ended.
@@ -63,14 +63,14 @@ indicates the overall weather status for the timeframe.
 * temp_limit **->**  example: if current_temperature(30) <= temp_limit(40) then description(hot)
 * feel_desc **->**  description of the weather status. (hot,warm… etc)
 ###### Wind_feeling
-* id -> identifier of the Entity.
+* id **->**  identifier of the Entity.
 * wind_speed_limit **->**  example: if wind_speed (30) <= wind_speed_limit (40) then description(Windy)
 * Feel_desc **->**  descriprion of the wind status (windy,light wind, windless… etc)
 ###### Humidity_feeling
-* Id -> identifier of the Entity.
+* Id **->**  identifier of the Entity.
 * humidity_limit
 * Feel_desc **->**  descriprion of the humidity status. (humid, low humidity… etc)
 ###### Rain_feeling
-* Id -> identifier of the Entity.
+* Id **->**  identifier of the Entity.
 * rain_rate_limit
 * feel_desc **->**  descriprion of the rain status. (rainless, heave rain.. etc)
